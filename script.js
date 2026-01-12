@@ -1,35 +1,52 @@
 function getPrefix(food) {
 
     switch(food) {
-    case 'McDonalds':
+    case "McDonald's":
         return 'Peasant';
-    case 'Chick-fil-a':
-        return 'Farmer';
-    case 'Wendys':
-        return 'Guard';
     case 'Burger King':
-        return 'Knight';
-    case 'Taco Bell':
+     return 'Commoner';
+    case "Wendy's":
         return 'Noble';
+    case 'Chick-fil-A':
+        return 'Royalty';
+    case 'Panera Bread':
+        return 'Peasant';
+    case "Popeye's":
+        return 'Herald';
+    case 'Taco Bell':
+     return 'Commoner';
     case 'Subway':
-        return 'Baron';
-        case 'KFC':
-        return 'Commoner';
-    case 'Popeyes':
-        return 'Count';
+        return 'Steward';
+    case "Raising Cane's":
+        return 'Royalty';
+    case 'Dairy Queen':
+        return 'Peasant';
+    case "Hardee's":
+        return 'Villager';
+    case  "Carl's Jr.":
+        return 'Tradesperson' 
+    case 'Whataburger':
+        return 'Fieldhand';
     case 'In-N-Out':
-        return 'Squire';
+        return 'Merchant';
+    case 'Shake Shack':
+        return 'Noble';
     case 'Five Guys':
-        return 'Lord';
-    case 'Arbys':
-        return 'Royal';
-    case 'Jack In The Box':
-        return 'Soldier ';
-    
+        return 'Guardian';
+    case 'KFC':
+        return 'Soldier';
+    case "Arby's":
+        return 'Constable';
+    case 'Jack in the Box':
+        return 'Artisan';
+    case 'Sonic Drive-In':
+        return 'Bard';
 
     default:
         return 'Peasant';   
 
     }
 }
+
+
 

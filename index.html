@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
 
@@ -7,38 +5,138 @@
 
 
 <head>
- <title>Title</title>
- <!-- Required meta tags -->
- <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 
- <!-- Bootstrap CSS v5.2.1 -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
- <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 
 <body>
- <header>
-   <h1 class="text-center bold">Find out your PEASANT Name</h1>
- </header>
- <main class="container d-flex flex-column gap-3 align-items-center">
+  <header>
+    <h1 class="text-center bold">Find out your PEASANT Name</h1>
+  </header>
+  <main class="container d-flex flex-column gap-3 align-items-center">
 
 
 
 
-   <div class="mb-3">
-     <label for="gender" class="form-label fw-semibold">What is your gender</label>
-     <select id="gender" class="form-select">
-       <option value="">Choose</option>
-       <option value="nice">Female</option>
-       <option value="naughty">Male</option>
- <button onclick="checkInput()">Enter</button>
-     </select>
+    <div class="mb-3">
+      <label for="gender" class="form-label fw-semibold">What is your gender</label>
+      <select id="gender" class="form-select">
+        <option value="">Choose</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+        <button onclick="checkInput()">Enter</button>
+      </select>
 
 
 
 
-   </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <label for="exampleDataList" class="form-label">Favorite Fast Food Place</label>
+    <input class="form-control" list="datalistOptions" id="fastFood"
+      placeholder="Type your favorite fast food place...">
+
+
+    <datalist id="datalistOptions">
+      <option value="McDonald's">
+      <option value="Chick-fil-A">
+      <option value="Wendy's">
+      <option value="Burger King">
+      <option value="Taco Bell">
+      <option value="Subway">
+      <option value="KFC">
+      <option value="Popeye's">
+      <option value="In-N-Out">
+      <option value="Five Guys">
+      <option value="Arby's">
+      <option value="Jack in the Box">
+      <option value="Sonic Drive-In">
+      <option value="Dairy Queen">
+      <option value="Hardee's">
+      <option value="Carl's Jr.">
+      <option value="Whataburger">
+      <option value="Raising Cane's">
+      <option value="Shake Shack">
+      <option value="Panera Bread">
+    </datalist>
+
+
+
+
+
+
+    <label for="hLevel" class="form-label ">Example range</label>
+    <input type="range" class="form-range" min="0" max="5" step="0.5" id="hLevel">
+
+
+
+
+    <h2>Which would you rather fight?</h1>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="question1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          1 horse-sized duck
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="question2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+          100 duck-sized horses
+        </label>
+      </div>
+
+
+
+
+      <form class="row g-3 ">
+        <div class="col-auto">
+
+
+          <input type="name" class="form-control" id="userName" placeholder="What is your name?">
+        </div>
+        <div class="col-auto">
+          <button type="Enter" class="btn btn-primary mb-3">Enter</button>
+        </div>
+      </form>
+  </main>
+  <footer>
+
+
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+
+</html>

@@ -1,7 +1,9 @@
-function getPrefix(food) {
-    const gender = document.getElementById('gender').value;
 
-   
+const gender = document.getElementById('gender').value;
+
+
+function getPrefix(food) {
+  
    if (gender === 'Female'){
 
   
@@ -98,4 +100,16 @@ function getPrefix(food) {
                 return 'Peasant';
         }
 
-        
+        function getFirstName(hLevel) {
+       hLevel=document.getElementById('hLevel').value;
+       if (hLevel > 5 && gender === 'Female'){
+
+
+        rfrg
+       }
+
+        }
+
+    function getMiddleName() {
+
+    }

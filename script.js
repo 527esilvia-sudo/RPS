@@ -3,7 +3,7 @@ const gender = document.getElementById('gender').value;
 const food = document.getElementById('fastFood').value;
 
 function getPrefix(food, gender) {
-   if (gender === 'Female') {
+    if (gender === 'Female') {
         switch (food) {
             case "McDonald's":
                 return 'Peasant';
@@ -97,18 +97,60 @@ function getPrefix(food, gender) {
         }
     }
 }
-console.log(getPrefix("Five Guys", "Male"));  
+console.log(getPrefix("Five Guys", "Male"));
 
-function getFirstName(hLevel) {
+
+function getPoints(value) {
+    switch (value) {
+        case 'true':
+            return 2
+        case 'false':
+            return 1
+        default:
+            return 1
+    }
+}  
+
+function getFirstName() {
+    const q1 = document.getElementById('q1').value
+    const q2 = document.getElementById('q2').value
+    const q3 = document.getElementById('q3').value
+    const q4 = document.getElementById('q4').value
+    const q5 = document.getElementById('q5').value
+    const score = getPoints(q1) + getPoints(q2) + getPoints(q3) + getPoints(q4) + getPoints(q5)
+
+}
+
+function getLastName(hLevel) {
     hLevel = document.getElementById('hLevel').value;
-    if (hLevel > 5 && gender === 'Female') {
+    if (hLevel > 5) {
+        return ' of Gladwick'
 
-        rfrg
-
+    }
+    else {
+        return 'Mourndale'
     }
 
 }
 
-function getMiddleName() {
 
+function getSuffix(choice) {
+    if (choice === "man") {
+        return "The Brave ";
+    } else if (choice === "gorilla") {
+        return " the Reasonable";
+    }
 }
+
+
+function getNewName() {
+    let newName = getPrefix() + getFirstName() + getLastName()
+    document.getElementById('placewhereTextgoes').innerHTML = newName
+}
+
+
+
+
+
+
+

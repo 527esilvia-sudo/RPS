@@ -5,7 +5,7 @@
 
 
 <head>
-  <title>Title</title>
+  <title>Name Generator</title>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -20,7 +20,7 @@
 
 <body>
   <header>
-    <h1 class="text-center bold">Find out your PEASANT Name</h1>
+    <h1 class="text-center bold">Find out your MEDIEVAL Name</h1>
   </header>
   <main class="container d-flex flex-column gap-3 align-items-center">
 
@@ -28,7 +28,7 @@
 
 
     <div class="mb-3">
-      <label for="gender" class="form-label fw-semibold">What is your gender</label>
+      <label for="gender" class="form-label fw-semibold">Select a gender</label>
       <select id="gender" class="form-select">
         <option value="">Choose</option>
         <option value="female">Female</option>
@@ -87,71 +87,91 @@
 
 
 
-    <label for="hLevel" class="form-label ">Example range</label>
+    <label for="hLevel" class="form-label ">Current Happiness Level</label>
     <input type="range" class="form-range" min="0" max="5" step="0.5" id="hLevel">
 
 
 
 
-    <h2>Which would you rather fight?</h1>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="question1" value="option1" checked>
-        <label class="form-check-label" for="exampleRadios1">
-          1 horse-sized duck
-        </label>
+    <h2>Which would you rather fight?</h2>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="man" value="man" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        100 unarmed men
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="gorilla" value="gorilla">
+      <label class="form-check-label" for="exampleRadios2">
+        1 gorilla
+      </label>
+    </div>
+
+    <div class="card-body">
+      <h4 class="card-title">Naughty or Nice</h4>
+      <p class="card-text">Answer each Question. Blank counts as no.</p>
+      <div class="mb-3">
+        <label for="q1" class="form-label fw-semibold">What is more important to you?</label>
+        <select id="q1" class="form-select">
+          <option value="">Choose</option>
+          <option value="true">Honor</option>
+          <option value="false">Survival</option>
+
+        </select>
+
+
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="question2" value="option2">
-        <label class="form-check-label" for="exampleRadios2">
-          100 duck-sized horses
-        </label>
+      <div class="mb-3">
+        <label for="q2" class="form-label fw-semibold">Would you rather guard something or steal it?</label>
+        <select id="q2" class="form-select">
+          <option value="">Choose</option>
+          <option value="true">Guard</option>
+          <option value="False">Steal</option>
+
+        </select>
       </div>
 
-      <div class="card-body">
-        <h4 class="card-title">Naughty or Nice</h4>
-        <p class="card-text">Answer each Question. Blank counts as no.</p>
-        <div class="mb-3">
-          <label for="q1" class="form-label fw-semibold">Did you help someone this week?</label>
-          <select id="q1" class="form-select">
-            <option value="">Choose</option>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
 
-          </select>
+      <div class="mb-3">
+        <label for="q3" class="form-label fw-semibold">Would you rather lead or follow?</label>
+        <select id="q3" class="form-select">
+          <option value="">Choose</option>
+          <option value="true">Lead</option>
+          <option value="false">Follow</option>
+        </select>
+      </div>
 
+      <div class="mb-3">
+        <label for="q4" class="form-label fw-semibold">What do people rely on you for?</label>
+        <select id="q4" class="form-select">
+          <option value="">Choose</option>
+          <option value="false">Strength</option>
+          <option value="false">Protection</option>
+          <option value="true">Knowledge</option>
+          <option value="true">Secrecy</option>
+        </select>
+      </div>
+         <div class="mb-3">
+        <label for="q5" class="form-label fw-semibold">Would you rather face problems alone or with others?</label>
+        <select id="q5" class="form-select">
+          <option value="">Choose</option>
+          <option value="true">Alone</option>
+          <option value="false">Protection</option>
+      
+        </select>
+      </div>
+    </div>
 
-        </div>
-        <div class="mb-3">
-          <label for="q2" class="form-label fw-semibold">Did you fight with a sibling this week?</label>
-          <select id="q2" class="form-select">
-            <option value="">Choose</option>
-            <option value="true">Yes</option>
-            <option value="False">No</option>
-
-          </select>
-
-
-        </div>
-        <div class="mb-3">
-          <label for="q3" class="form-label fw-semibold">Did you say thank you when someone helped you?</label>
-          <select id="q3" class="form-select">
-            <option value="">Choose</option>
-            <option value="true">True</option>
-            <option value="false">False</option>
-          </select>
-
-
-
-          <form class="row g-3 ">
-            <div class="col-auto">
+    <form class="row g-3 ">
+      <div class="col-auto">
 
 
-              <input type="name" class="form-control" id="userName" placeholder="What is your name?">
-            </div>
-            <div class="col-auto">
-              <button type="Enter" class="btn btn-primary mb-3">Enter</button>
-            </div>
-          </form>
+        <input type="name" class="form-control" id="userName" placeholder="What is your name?">
+      </div>
+      <div class="col-auto">
+        <button type="Enter" class="btn btn-primary mb-3" onclick="getNewName()">Enter</button>
+      </div>
+    </form>
   </main>
   <footer>
 

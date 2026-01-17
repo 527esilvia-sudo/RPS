@@ -325,14 +325,181 @@ return 'Lumina'
 }
 }
 
+function getMiddleName(userName) {
+const userName = document.getElementById('userName').value;
+  const gender = document.getElementById('gender').value;
+const firstLetter = userName.charAt(0).toUpperCase();
+if (gender === 'Male'){
+if (firstLetter === 'A') {
+return 'Alwin'
+}
+if (firstLetter === 'B') {
+return 'Benedict'
+}
+if (firstLetter === 'C') {
+return 'Corwin'
+}
+if (firstLetter === 'D') {
+return 'Darian'
+}
+if (firstLetter === 'E') {
+return 'Edrin'
+}
+if (firstLetter === 'F') {
+return 'Faelan'
+}
+if (firstLetter === 'G') {
+return 'Hadrian'
+}
+if (firstLetter === 'H') {
+return ''
+}
+if (firstLetter === 'I') {
+return 'Ignatius'
+}
+if (firstLetter === 'J') {
+return 'Jorvan'
+}
+if (firstLetter === 'K') {
+return 'Kaelen'
+}
+if (firstLetter === 'L') {
+return 'Leofric'
+}
+if (firstLetter === 'M') {
+return 'Mortimer'
+}
+if (firstLetter === 'N') {
+return 'Nolan'
+}
+if (firstLetter === 'O') {
+return 'Osric'
+}
+if (firstLetter === 'P') {
+return 'Percival'
+}
+if (firstLetter === 'Q') {
+return 'Quinlan'
+}
+if (firstLetter === 'R') {
+return 'Roderic'
+}
+if (firstLetter === 'S') {
+return 'Sylvan'
+}
+if (firstLetter === 'T') {
+return 'Thaddeus'
+}
+if (firstLetter === 'U') {
+return 'Ulric'
+}
+if (firstLetter === 'V') {
+return 'Valerian'
+}
+if (firstLetter === 'W') {
+return 'Wystan'
+}
+if (firstLetter === 'X') {
+return 'Xander'
+}
+if (firstLetter === 'Y') {
+return 'Yvain'
+}
+if (firstLetter === 'Z') {
+return 'Zephan'
+}
+
+}
+if (gender === 'Female'){
+    if (firstLetter === 'A') {
+return 'Aeliana'
+}
+if (firstLetter === 'B') {
+return 'Belladonna'
+}
+if (firstLetter === 'C') {
+return 'Clarimond'
+}
+if (firstLetter === 'D') {
+return 'Drusilla'
+}
+if (firstLetter === 'E') {
+return 'Ethelyn'
+}
+if (firstLetter === 'F') {
+return 'Fiora'
+}
+if (firstLetter === 'G') {
+return 'Gisela'
+}
+if (firstLetter === 'H') {
+return 'Honora'
+}
+if (firstLetter === 'I') {
+return 'Ilyana'
+}
+if (firstLetter === 'J') {
+return 'Juniper'
+}
+if (firstLetter === 'K') {
+return 'Kerensa'
+}
+if (firstLetter === 'L') {
+return 'Lucinda'
+}
+if (firstLetter === 'M') {
+return 'Morgana'
+}
+if (firstLetter === 'N') {
+return 'Nerissa'
+}
+if (firstLetter === 'O') {
+return 'Ophelia'
+}
+if (firstLetter === 'P') {
+return 'Philomena'
+}
+if (firstLetter === 'Q') {
+return 'Queniva'
+}
+if (firstLetter === 'R') {
+return 'Rosamund'
+}
+if (firstLetter === 'S') {
+return 'Selene'
+}
+if (firstLetter === 'T') {
+return 'Thalassa'
+}
+if (firstLetter === 'U') {
+return 'Ursina'
+}
+if (firstLetter === 'V') {
+return 'Violetta'
+}
+if (firstLetter === 'W') {
+return 'Winifred'
+}
+if (firstLetter === 'X') {
+return 'Xylia'
+}
+if (firstLetter === 'Y') {
+return 'Ysoria'
+}
+if (firstLetter === 'Z') {
+return 'Zephyra'
+}
+}
+}
+
 function getLastName(hLevel) {
-    hLevel = document.getElementById('hLevel').value;
+   const hLevel = document.getElementById('hLevel').value;
     if (hLevel > 5) {
         return ' of Gladwick'
 
     }
     else {
-        return 'Mourndale'
+        return ' of Mourndale'
     }
 
 }
@@ -348,8 +515,8 @@ function getSuffix(choice) {
 
 
 function getNewName() {
-    let newName = getPrefix() + getFirstName() + getLastName()
-    document.getElementById('placewhereTextgoes').innerHTML = newName
+    let newName = getPrefix() + getFirstName() + getMiddleName() + getLastName() + getSuffix()
+    document.getElementById('getInput').innerHTML = newName
 }
 
 

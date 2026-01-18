@@ -506,10 +506,11 @@ function getMiddleName() {
 
 function getLastName() {
     const hLevel = document.getElementById('hLevel').value;
-    if (hLevel > 5) {
+    if (hLevel >= 3) {
         return ' of Gladwick'
 
     }
+    
     else {
         return ' of Mourndale'
     }

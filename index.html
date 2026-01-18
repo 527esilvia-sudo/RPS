@@ -31,14 +31,9 @@
       <label for="gender" class="form-label fw-semibold">Select a gender</label>
       <select id="gender" class="form-select">
         <option value="">Choose</option>
-        <option value="female">Female</option>
-        <option value="male">Male</option>
-        <button onclick="checkInput()">Enter</button>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
       </select>
-
-
-
-
     </div>
 
 
@@ -46,7 +41,9 @@
 
 
 
+<h1 id="getNewName"></h1>
 
+<div id="genderSymbol" style="font-size: 2rem; color: #0066cc; text-align: center; display: none;"></div>
 
 
 
@@ -111,54 +108,56 @@
       <h4 class="card-title">Naughty or Nice</h4>
       <p class="card-text">Answer each Question. Blank counts as no.</p>
       <div class="mb-3">
-        <label for="q1" class="form-label fw-semibold">What is more important to you?</label>
-        <select id="q1" class="form-select">
-          <option value="">Choose</option>
-          <option value="true">Honor</option>
-          <option value="false">Survival</option>
-
-        </select>
-
-
+        <label class="form-label fw-semibold">What is more important to you?</label>
+        <div class="btn-group w-100" role="group">
+          <input type="radio" class="btn-check" name="q1" id="q1_honor" value="true" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q1_honor">Honor</label>
+          <input type="radio" class="btn-check" name="q1" id="q1_survival" value="false" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q1_survival">Survival</label>
+        </div>
       </div>
       <div class="mb-3">
-        <label for="q2" class="form-label fw-semibold">Would you rather guard something or steal it?</label>
-        <select id="q2" class="form-select">
-          <option value="">Choose</option>
-          <option value="true">Guard</option>
-          <option value="False">Steal</option>
-
-        </select>
+        <label class="form-label fw-semibold">Would you rather guard something or steal it?</label>
+        <div class="btn-group w-100" role="group">
+          <input type="radio" class="btn-check" name="q2" id="q2_guard" value="true" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q2_guard">Guard</label>
+          <input type="radio" class="btn-check" name="q2" id="q2_steal" value="false" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q2_steal">Steal</label>
+        </div>
       </div>
 
 
       <div class="mb-3">
-        <label for="q3" class="form-label fw-semibold">Would you rather lead or follow?</label>
-        <select id="q3" class="form-select">
-          <option value="">Choose</option>
-          <option value="true">Lead</option>
-          <option value="false">Follow</option>
-        </select>
+        <label class="form-label fw-semibold">Would you rather lead or follow?</label>
+        <div class="btn-group w-100" role="group">
+          <input type="radio" class="btn-check" name="q3" id="q3_lead" value="true" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q3_lead">Lead</label>
+          <input type="radio" class="btn-check" name="q3" id="q3_follow" value="false" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q3_follow">Follow</label>
+        </div>
       </div>
 
       <div class="mb-3">
-        <label for="q4" class="form-label fw-semibold">What do people rely on you for?</label>
-        <select id="q4" class="form-select">
-          <option value="">Choose</option>
-          <option value="false">Strength</option>
-          <option value="false">Protection</option>
-          <option value="true">Knowledge</option>
-          <option value="true">Secrecy</option>
-        </select>
+        <label class="form-label fw-semibold">What do people rely on you for?</label>
+        <div class="btn-group w-100" role="group">
+          <input type="radio" class="btn-check" name="q4" id="q4_strength" value="false" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q4_strength">Strength</label>
+          <input type="radio" class="btn-check" name="q4" id="q4_protection" value="false" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q4_protection">Protection</label>
+          <input type="radio" class="btn-check" name="q4" id="q4_knowledge" value="true" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q4_knowledge">Knowledge</label>
+          <input type="radio" class="btn-check" name="q4" id="q4_secrecy" value="true" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q4_secrecy">Secrecy</label>
+        </div>
       </div>
       <div class="mb-3">
-        <label for="q5" class="form-label fw-semibold">Would you rather face problems alone or with others?</label>
-        <select id="q5" class="form-select">
-          <option value="">Choose</option>
-          <option value="true">Alone</option>
-          <option value="false">Protection</option>
-
-        </select>
+        <label class="form-label fw-semibold">Would you rather face problems alone or with others?</label>
+        <div class="btn-group w-100" role="group">
+          <input type="radio" class="btn-check" name="q5" id="q5_alone" value="true" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q5_alone">Alone</label>
+          <input type="radio" class="btn-check" name="q5" id="q5_others" value="false" autocomplete="off">
+          <label class="btn btn-outline-primary" for="q5_others">With Others</label>
+        </div>
       </div>
     </div>
 
@@ -169,7 +168,7 @@
         <input type="name" class="form-control" id="userName" placeholder="What is your name?">
       </div>
       <div class="col-auto">
-        <button type="Enter" class="btn btn-primary mb-3" onclick="getNewName()">Enter</button>
+        <button type="button" class="btn btn-primary mb-3" onclick="getNewName()">Enter</button>
       </div>
     </form>
   </main>

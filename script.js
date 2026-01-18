@@ -115,6 +115,7 @@ function getFirstName() {
     const q3 = document.querySelector('input[name="q3"]:checked')?.value || '';
     const q4 = document.querySelector('input[name="q4"]:checked')?.value || '';
     const q5 = document.querySelector('input[name="q5"]:checked')?.value || '';
+    const score = getPoints(q1) + getPoints(q2) + getPoints(q3) + getPoints(q4) + getPoints(q5);
     if (gender === 'Male') {
         if (score <= 2) {
             const r = Math.floor(Math.random() * 5) + 1
@@ -332,6 +333,7 @@ function getFirstName() {
             }
         }
     }
+    return 'Traveler';
 }
 
 function getMiddleName() {
@@ -525,25 +527,57 @@ function getSuffix(choice) {
 }
 
 function getNewName() {
-  const gender = document.getElementById('gender').value;
-  const food = document.getElementById('fastFood').value;
-  const choice = document.querySelector('input[name="exampleRadios"]:checked').value;
+  try {
+    const gender = document.getElementById('gender').value;
+    const food = document.getElementById('fastFood').value;
+    const userName = document.getElementById('userName').value;
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    const q3 = document.querySelector('input[name="q3"]:checked');
+    const q4 = document.querySelector('input[name="q4"]:checked');
+    const q5 = document.querySelector('input[name="q5"]:checked');
+    const choice = document.querySelector('input[name="exampleRadios"]:checked')?.value || 'man';
 
-  document.getElementById('getNewName').innerHTML = `${getPrefix(food, gender)} ${getFirstName()} ${getMiddleName()} ${getLastName()} ${getSuffix(choice)}`;
+    // Validation
+    if (!gender) {
+      alert('Please select a gender');
+      return;
+    }
+    if (!food) {
+      alert('Please select a favorite fast food place');
+      return;
+    }
+    if (!userName) {
+      alert('Please enter your name');
+      return;
+    }
+    if (!q1 || !q2 || !q3 || !q4 || !q5) {
+      alert('Please answer all the questions');
+      return;
+    }
+
+    const prefix = getPrefix(food, gender);
+    const firstName = getFirstName();
+    const middleName = getMiddleName();
+    const lastName = getLastName();
+    const suffix = getSuffix(choice);
+
+    const nameParts = [
+      `<span class="name-part part-1">${prefix}</span>`,
+      `<span class="name-part part-2">${firstName}</span>`,
+      `<span class="name-part part-3">${middleName}</span>`,
+      `<span class="name-part part-4">${lastName}</span>`,
+      `<span class="name-part part-5">${suffix}</span>`
+    ];
+
+    document.getElementById('getNewName').innerHTML = nameParts.join(' ');
+    document.getElementById('getNewName').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (e) {
+    console.error('Error in getNewName:', e);
+    document.getElementById('getNewName').innerHTML = 'Error generating name';
+  }
 }
 
-document.getElementById('gender').addEventListener('change', function() {
-  const genderSymbol = document.getElementById('genderSymbol');
-  if (this.value === 'Male') {
-    genderSymbol.textContent = '♂';
-    genderSymbol.style.display = 'block';
-  } else if (this.value === 'Female') {
-    genderSymbol.textContent = '♀';
-    genderSymbol.style.display = 'block';
-  } else {
-    genderSymbol.style.display = 'none';
-  }
-});
 
 
 

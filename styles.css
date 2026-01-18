@@ -187,3 +187,28 @@ datalist option {
     background-color: #0f3460;
     color: #d4af37;
 }
+
+@keyframes nameGlow {
+    from {
+        font-size: 1rem;
+        text-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+        opacity: 0;
+    }
+    to {
+        font-size: 2.5rem;
+        text-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 50px rgba(212, 175, 55, 0.5);
+        opacity: 1;
+    }
+}
+
+.name-part {
+    display: inline-block;
+    margin: 0 5px;
+    animation: nameGlow 1.5s ease-out forwards;
+}
+
+.name-part.part-1 { animation-delay: 0s; }
+.name-part.part-2 { animation-delay: 0.5s; }
+.name-part.part-3 { animation-delay: 1s; }
+.name-part.part-4 { animation-delay: 1.5s; }
+.name-part.part-5 { animation-delay: 2s; }

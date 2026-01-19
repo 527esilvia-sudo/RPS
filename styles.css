@@ -207,8 +207,3 @@ datalist option {
     animation: nameGlow 1.5s ease-out forwards;
 }
 
-.name-part.part-1 { animation-delay: 0s; }
-.name-part.part-2 { animation-delay: 0.5s; }
-.name-part.part-3 { animation-delay: 1s; }
-.name-part.part-4 { animation-delay: 1.5s; }
-.name-part.part-5 { animation-delay: 2s; }

@@ -1,209 +1,250 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital@0;1&display=swap');
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Spectral:wght@300;400;600&family=MedievalSharp&display=swap');
 
-* {
-    font-family: 'Crimson Text', serif;
-}
-
+/* ============================================================
+   BACKGROUND — PURE COLORS, NO LIGHTENING, WADING EFFECT
+   ============================================================ */
 body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    background-attachment: fixed;
-    color: #d4af37;
+    background:
+        radial-gradient(circle at 20% 30%, #5E0B15, transparent 100%),
+        radial-gradient(circle at 80% 20%, #4E598C, transparent 100%),
+        radial-gradient(circle at 30% 80%, #BB9457, transparent 100%),
+        radial-gradient(circle at 70% 70%, #31572C, transparent 100%),
+        radial-gradient(circle at 50% 50%, #102B3F, transparent 100%);
+
+    background-size: 200% 200%;
+    animation: royalWade 10s ease-in-out infinite;
+
+    color: #f8e9c9;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     position: relative;
+    overflow-x: hidden;
 }
 
-body::before {
-    content: '';
+@keyframes royalWade {
+    0%   { background-position: 0% 0%; }
+    25%  { background-position: 100% 30%; }
+    50%  { background-position: 60% 100%; }
+    75%  { background-position: 20% 70%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* ============================================================
+   FIXED HEADER — STUCK TO TOP
+   ============================================================ */
+header {
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        repeating-linear-gradient(
-            90deg,
-            rgba(212, 175, 55, 0.03) 0px,
-            rgba(212, 175, 55, 0.03) 1px,
-            transparent 1px,
-            transparent 2px
-        );
-    pointer-events: none;
-    z-index: 1;
-}
 
-header {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 40, 0.9) 100%);
-    border-bottom: 3px solid #d4af37;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
-    padding: 30px 0;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
+    background: linear-gradient(135deg, #102B3F, #113355);
+    border-bottom: 5px solid #BB9457;
+    padding: 28px 0;
+    text-align: center;
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.6),
+        inset 0 0 18px rgba(187,148,87,0.25);
+
+    z-index: 10;
 }
 
 header h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 3.5rem;
-    font-weight: 900;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.3);
-    letter-spacing: 3px;
+    font-family: 'MedievalSharp', cursive;
+    color: #ffe8b0;
     margin: 0;
+    text-shadow:
+        0 0 10px rgba(187,148,87,0.5),
+        0 0 20px rgba(187,148,87,0.3);
 }
 
-main {
-    background: rgba(20, 30, 60, 0.6);
-    border: 2px solid #d4af37;
-    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1), 0 0 30px rgba(0, 0, 0, 0.7);
+/* Push content down so header doesn't overlap */
+body > *:not(header) {
+    margin-top: 120px;
+}
+
+/* ============================================================
+   MAIN CARD — #113355
+   ============================================================ */
+.scroll-card {
+    width: 90%;
+    max-width: 850px;
+
+    background:
+        linear-gradient(145deg, #113355, #0d2a44),
+        repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.04) 0px,
+            rgba(255,255,255,0.04) 2px,
+            transparent 2px,
+            transparent 6px
+        );
+
+    border: 5px solid #BB9457;
+    border-radius: 16px;
+    padding: 40px;
+
+    box-shadow:
+        0 0 25px rgba(0,0,0,0.6),
+        inset 0 0 12px rgba(0,0,0,0.4);
+
     position: relative;
     z-index: 2;
 }
 
+/* ============================================================
+   LABELS
+   ============================================================ */
 .form-label {
-    font-family: 'Cinzel', serif;
-    color: #d4af37;
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-family: 'MedievalSharp', cursive;
+    color: #ffe8b0;
+    font-size: 1.2rem;
 }
 
-.form-select,
+/* ============================================================
+   INPUTS
+   ============================================================ */
 .form-control,
-input[type="text"],
-input[type="name"],
-input[type="range"] {
-    background-color: rgba(15, 52, 96, 0.8);
-    border: 2px solid #d4af37;
-    color: #d4af37;
-    border-radius: 5px;
+.form-select {
+    background: #e8d7b4;
+    border: 2px solid #BB9457;
+    color: #1a2233;
+    border-radius: 6px;
 }
 
-.form-select:focus,
 .form-control:focus,
-input[type="text"]:focus,
-input[type="name"]:focus {
-    background-color: rgba(15, 52, 96, 0.9);
-    border-color: #e6c200;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-    color: #d4af37;
+.form-select:focus {
+    border-color: #ffe08a;
+    box-shadow: 0 0 10px rgba(187,148,87,0.6);
 }
 
-.form-select option {
-    background-color: #0f3460;
-    color: #d4af37;
+/* ============================================================
+   RADIO BUTTONS — PURE PALETTE COLORS
+   ============================================================ */
+.medieval-radio-label {
+    font-family: 'Spectral', serif;
+    color: #ffe8b0;
+    font-size: 1.15rem;
 }
 
 .form-check-input {
-    background-color: rgba(15, 52, 96, 0.8);
-    border: 2px solid #d4af37;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+
+    border: 3px solid #4E598C; /* pure periwinkle */
+    background: #102B3F;       /* pure iron blue */
+    border-radius: 4px;
+
     cursor: pointer;
+    transition: 0.25s;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.6);
+}
+
+.form-check-input:hover {
+    border-color: #BB9457; /* pure gold */
 }
 
 .form-check-input:checked {
-    background-color: #d4af37;
-    border-color: #d4af37;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    background: #BB9457; /* pure gold */
+    border-color: #BB9457;
+    box-shadow: 0 0 12px rgba(187,148,87,0.7);
 }
 
-.form-check-label {
-    color: #d4af37;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.form-range {
-    filter: sepia(0.3);
-}
-
-.form-range .form-range-thumb {
-    background: #d4af37;
-    border-color: #d4af37;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-}
-
+/* ============================================================
+   SECTION TITLES
+   ============================================================ */
 h2 {
-    font-family: 'Cinzel', serif;
-    color: #d4af37;
-    font-size: 1.8rem;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    letter-spacing: 1px;
-}
-
-#getNewName {
-    font-family: 'Cinzel', serif;
-    color: #d4af37;
+    font-family: 'MedievalSharp', cursive;
+    color: #ffe8b0;
+    text-shadow: 0 0 12px rgba(187,148,87,0.4);
     font-size: 2rem;
-    margin: 30px 0;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #d4af37;
-    border-radius: 8px;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    letter-spacing: 2px;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, #d4af37 0%, #e6c200 100%);
-    border: 2px solid #8b7500;
-    color: #0f3460;
+/* ============================================================
+   BUTTON GROUPS
+   ============================================================ */
+.medieval-choice.btn {
+    font-family: 'Cinzel', serif;
+    background: #113355;
+    border: 3px solid #BB9457;
+    color: #ffe8b0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 2px;
+    transition: 0.25s ease;
+}
+
+.medieval-choice.btn:hover {
+    background: #1a4a77;
+    box-shadow: 0 0 12px rgba(255,230,150,0.7);
+}
+
+.btn-check:checked + .medieval-choice.btn {
+    background: #5E0B15; /* pure crimson */
+    color: #ffe8b0;
+    box-shadow: 0 0 12px rgba(187,148,87,0.7);
+}
+
+/* ============================================================
+   ENTER BUTTON
+   ============================================================ */
+.medieval-btn.btn {
+    background: #113355;
+    border: 3px solid #BB9457;
+    color: #ffe8b0;
+    padding: 12px 28px;
+    border-radius: 8px;
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 12px 30px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    box-shadow: none;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.6);
+    transition: 0.3s ease;
 }
 
-.btn-primary:hover {
-    background: linear-gradient(135deg, #e6c200 0%, #ffd700 100%);
-    box-shadow: none;
-    transform: translateY(-2px);
+.medieval-btn.btn:hover {
+    background: #1a4a77;
+    box-shadow: 0 0 15px rgba(255,230,150,0.7);
+    transform: translateY(-3px);
 }
 
-.btn-primary:active {
-    transform: translateY(0);
-    box-shadow: none;
+.medieval-btn.btn:active {
+    background: #0d2a44;
+    transform: translateY(0px);
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #d4af37;
-    border-top: 2px solid #d4af37;
-    margin-top: 40px;
+/* ============================================================
+   NAME BOX — EMBERS
+   ============================================================ */
+.spark-box {
+    background: rgba(255,255,255,0.12);
+    border: 4px solid #BB9457;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'MedievalSharp', cursive;
+    color: #ffe8b0;
+    text-shadow: 0 0 10px rgba(187,148,87,0.5);
+    position: relative;
+    overflow: hidden;
 }
 
-datalist option {
-    background-color: #0f3460;
-    color: #d4af37;
+.spark-box::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    opacity: 0.55;
+    animation: emberFloat 12s linear infinite;
+    pointer-events: none;
+    filter: brightness(1.7) contrast(1.2);
+    mix-blend-mode: screen;
 }
 
-@keyframes nameGlow {
-    from {
-        font-size: 1rem;
-        text-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
-        opacity: 0;
-    }
-    to {
-        font-size: 2.5rem;
-        text-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 50px rgba(212, 175, 55, 0.5);
-        opacity: 1;
-    }
+@keyframes emberFloat {
+    from { transform: translate(0,0); }
+    to { transform: translate(-180px, -150px); }
 }
-
-.name-part {
-    display: inline-block;
-    margin: 0 5px;
-    animation: nameGlow 1.5s ease-out forwards;
-}
-

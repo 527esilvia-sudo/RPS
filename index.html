@@ -1,32 +1,26 @@
 <!doctype html>
 <html lang="en">
 
-
-
-
 <head>
   <title>Name Generator</title>
-  <!-- Required meta tags -->
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
-
 <body>
+
   <header>
     <h1 class="text-center bold">Find out your MEDIEVAL Name</h1>
   </header>
-  <main class="container d-flex flex-column gap-3 align-items-center">
 
+  <!-- FIX: replaced .container with .scroll-card -->
+  <main class="scroll-card d-flex flex-column gap-3 align-items-center">
 
-
-
+    <!-- Gender -->
     <div class="mb-3">
       <label for="gender" class="form-label fw-semibold">Select a gender</label>
       <select id="gender" class="form-select">
@@ -36,25 +30,15 @@
       </select>
     </div>
 
+    <!-- Name Output (spark container added) -->
+    <h1 id="getNewName" class="spark-box">Your New Name Will Appear Here</h1>
 
+    <div id="genderSymbol" style="font-size: 2rem; text-align: center; display: none;"></div>
 
-
-
-
-<h1 id="getNewName">Your New Name Will Appear Here</h1>
-
-<div id="genderSymbol" style="font-size: 2rem; color: #0066cc; text-align: center; display: none;"></div>
-
-
-
-
-
-
-
-    <label for="exampleDataList" class="form-label">Favorite Fast Food Place</label>
+    <!-- Fast Food -->
+    <label for="fastFood" class="form-label">Favorite Fast Food Place</label>
     <input class="form-control" list="datalistOptions" id="fastFood"
       placeholder="Type your favorite fast food place...">
-
 
     <datalist id="datalistOptions">
       <option value="McDonald's">
@@ -79,115 +63,111 @@
       <option value="Panera Bread">
     </datalist>
 
-
-
-
-
-
-    <label for="hLevel" class="form-label ">Current Happiness Level</label>
+    <!-- Happiness -->
+    <label for="hLevel" class="form-label">Current Happiness Level</label>
     <input type="range" class="form-range" min="0" max="5" step="0.5" id="hLevel">
 
-
-
-
+    <!-- Fight Choice -->
     <h2>Which would you rather fight?</h2>
+
     <div class="form-check">
       <input class="form-check-input" type="radio" name="exampleRadios" id="man" value="man" checked>
-      <label class="form-check-label" for="exampleRadios1">
-        100 unarmed men
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="gorilla" value="gorilla">
-      <label class="form-check-label" for="exampleRadios2">
-        1 gorilla
-      </label>
+      <label class="form-check-label medieval-radio-label" for="man">100 unarmed men</label>
     </div>
 
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="gorilla" value="gorilla">
+      <label class="form-check-label medieval-radio-label" for="gorilla">1 gorilla</label>
+    </div>
+
+    <!-- Naughty or Nice -->
     <div class="card-body">
       <h4 class="card-title">Naughty or Nice</h4>
       <p class="card-text">Answer each Question. Blank counts as no.</p>
+
+      <!-- Q1 -->
       <div class="mb-3">
         <label class="form-label fw-semibold">What is more important to you?</label>
         <div class="btn-group w-100" role="group">
-          <input type="radio" class="btn-check" name="q1" id="q1_honor" value="true" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q1_honor">Honor</label>
-          <input type="radio" class="btn-check" name="q1" id="q1_survival" value="false" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q1_survival">Survival</label>
+          <input type="radio" class="btn-check" name="q1" id="q1_honor" value="true">
+          <label class="btn medieval-choice" for="q1_honor">Honor</label>
+
+          <input type="radio" class="btn-check" name="q1" id="q1_survival" value="false">
+          <label class="btn medieval-choice" for="q1_survival">Survival</label>
         </div>
       </div>
+
+      <!-- Q2 -->
       <div class="mb-3">
         <label class="form-label fw-semibold">Would you rather guard something or steal it?</label>
         <div class="btn-group w-100" role="group">
-          <input type="radio" class="btn-check" name="q2" id="q2_guard" value="true" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q2_guard">Guard</label>
-          <input type="radio" class="btn-check" name="q2" id="q2_steal" value="false" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q2_steal">Steal</label>
+          <input type="radio" class="btn-check" name="q2" id="q2_guard" value="true">
+          <label class="btn medieval-choice" for="q2_guard">Guard</label>
+
+          <input type="radio" class="btn-check" name="q2" id="q2_steal" value="false">
+          <label class="btn medieval-choice" for="q2_steal">Steal</label>
         </div>
       </div>
 
-
+      <!-- Q3 -->
       <div class="mb-3">
         <label class="form-label fw-semibold">Would you rather lead or follow?</label>
         <div class="btn-group w-100" role="group">
-          <input type="radio" class="btn-check" name="q3" id="q3_lead" value="true" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q3_lead">Lead</label>
-          <input type="radio" class="btn-check" name="q3" id="q3_follow" value="false" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q3_follow">Follow</label>
+          <input type="radio" class="btn-check" name="q3" id="q3_lead" value="true">
+          <label class="btn medieval-choice" for="q3_lead">Lead</label>
+
+          <input type="radio" class="btn-check" name="q3" id="q3_follow" value="false">
+          <label class="btn medieval-choice" for="q3_follow">Follow</label>
         </div>
       </div>
 
+      <!-- Q4 -->
       <div class="mb-3">
         <label class="form-label fw-semibold">What do people rely on you for?</label>
         <div class="btn-group w-100" role="group">
-          <input type="radio" class="btn-check" name="q4" id="q4_strength" value="false" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q4_strength">Strength</label>
-          <input type="radio" class="btn-check" name="q4" id="q4_protection" value="false" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q4_protection">Protection</label>
-          <input type="radio" class="btn-check" name="q4" id="q4_knowledge" value="true" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q4_knowledge">Knowledge</label>
-          <input type="radio" class="btn-check" name="q4" id="q4_secrecy" value="true" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q4_secrecy">Secrecy</label>
+          <input type="radio" class="btn-check" name="q4" id="q4_strength" value="false">
+          <label class="btn medieval-choice" for="q4_strength">Strength</label>
+
+          <input type="radio" class="btn-check" name="q4" id="q4_protection" value="false">
+          <label class="btn medieval-choice" for="q4_protection">Protection</label>
+
+          <input type="radio" class="btn-check" name="q4" id="q4_knowledge" value="true">
+          <label class="btn medieval-choice" for="q4_knowledge">Knowledge</label>
+
+          <input type="radio" class="btn-check" name="q4" id="q4_secrecy" value="true">
+          <label class="btn medieval-choice" for="q4_secrecy">Secrecy</label>
         </div>
       </div>
+
+      <!-- Q5 -->
       <div class="mb-3">
         <label class="form-label fw-semibold">Would you rather face problems alone or with others?</label>
         <div class="btn-group w-100" role="group">
-          <input type="radio" class="btn-check" name="q5" id="q5_alone" value="true" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q5_alone">Alone</label>
-          <input type="radio" class="btn-check" name="q5" id="q5_others" value="false" autocomplete="off">
-          <label class="btn btn-outline-primary" for="q5_others">With Others</label>
+          <input type="radio" class="btn-check" name="q5" id="q5_alone" value="true">
+          <label class="btn medieval-choice" for="q5_alone">Alone</label>
+
+          <input type="radio" class="btn-check" name="q5" id="q5_others" value="false">
+          <label class="btn medieval-choice" for="q5_others">With Others</label>
         </div>
       </div>
     </div>
 
+    <!-- Name Input + Enter Button -->
     <form class="row g-3" onsubmit="return false;">
       <div class="col-auto">
-
-
         <input type="name" class="form-control" id="userName" placeholder="What is your name?">
       </div>
+
       <div class="col-auto">
-        <button type="button" class="btn btn-primary mb-3" onclick="getNewName()">Enter</button>
+        <!-- FIXED BUTTON: keeps Bootstrap behavior + allows medieval styling -->
+        <button type="button" class="btn medieval-btn mb-3" onclick="getNewName()">Enter</button>
       </div>
     </form>
+
   </main>
-  <footer>
 
+  <footer></footer>
 
-  </footer>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
-
-
 </html>

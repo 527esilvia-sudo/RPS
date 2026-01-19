@@ -1,60 +1,109 @@
 function getPrefix(food, gender) {
     if (gender === 'Female') {
         switch (food) {
-            case "McDonald's": return 'Peasant';
-            case 'Burger King': return 'Commoner';
-            case "Wendy's": return 'Noble';
-            case 'Chick-fil-A': return 'Queen';
-            case 'Panera Bread': return 'Peasant';
-            case "Popeye's": return 'Handmaid';
-            case 'Taco Bell': return 'Commoner';
-            case 'Subway': return 'Stewardess';
-            case "Raising Cane's": return 'Weaver';
-            case 'Dairy Queen': return 'Peasant';
-            case "Hardee's": return 'Villager';
-            case "Carl's Jr.": return 'Seamstress'
-            case 'Whataburger': return 'Baker';
-            case 'In-N-Out': return 'Housekeeper';
-            case 'Shake Shack': return 'Noble';
-            case 'Five Guys': return 'Herbalist';
-            case 'KFC': return 'Midwife';
-            case "Arby's": return 'Nun';
-            case 'Jack in the Box': return 'Shopkeeper';
-            case 'Sonic Drive-In': return 'Merchant';
-            default: return 'Peasant';
+            case "McDonald's":
+                return 'Peasant';
+            case 'Burger King':
+                return 'Commoner';
+            case "Wendy's":
+                return 'Noble';
+            case 'Chick-fil-A':
+                return 'Queen';
+            case 'Panera Bread':
+                return 'Peasant';
+            case "Popeye's":
+                return 'Handmaid';
+            case 'Taco Bell':
+                return 'Commoner';
+            case 'Subway':
+                return 'Stewardess';
+            case "Raising Cane's":
+                return 'Weaver';
+            case 'Dairy Queen':
+                return 'Peasant';
+            case "Hardee's":
+                return 'Villager';
+            case "Carl's Jr.":
+                return 'Seamstress'
+            case 'Whataburger':
+                return 'Baker';
+            case 'In-N-Out':
+                return 'Housekeeper';
+            case 'Shake Shack':
+                return 'Noble';
+            case 'Five Guys':
+                return 'Herbalist';
+            case 'KFC':
+                return 'Midwife';
+            case "Arby's":
+                return 'Nun';
+            case 'Jack in the Box':
+                return 'Shopkeeper';
+            case 'Sonic Drive-In':
+                return 'Merchant';
+
+            default:
+                return 'Peasant';
         }
     } else if (gender === 'Male') {
         switch (food) {
-            case "McDonald's": return 'Peasant';
-            case 'Burger King': return 'Commoner';
-            case "Wendy's": return 'Noble';
-            case 'Chick-fil-A': return 'King';
-            case 'Panera Bread': return 'Peasant';
-            case "Popeye's": return 'Herald';
-            case 'Taco Bell': return 'Commoner';
-            case 'Subway': return 'Steward';
-            case "Raising Cane's": return 'Royalty';
-            case 'Dairy Queen': return 'Peasant';
-            case "Hardee's": return 'Villager';
-            case "Carl's Jr.": return 'Tradesperson';
-            case 'Whataburger': return 'Fieldhand';
-            case 'In-N-Out': return 'Merchant';
-            case 'Shake Shack': return 'Noble';
-            case 'Five Guys': return 'Guardian';
-            case 'KFC': return 'Soldier';
-            case "Arby's": return 'Constable';
-            case 'Jack in the Box': return 'Artisan';
-            case 'Sonic Drive-In': return 'Bard';
-            default: return 'Peasant';
+            case "McDonald's":
+                return 'Peasant';
+            case 'Burger King':
+                return 'Commoner';
+            case "Wendy's":
+                return 'Noble';
+            case 'Chick-fil-A':
+                return 'King';
+            case 'Panera Bread':
+                return 'Peasant';
+            case "Popeye's":
+                return 'Herald';
+            case 'Taco Bell':
+                return 'Commoner';
+            case 'Subway':
+                return 'Steward';
+            case "Raising Cane's":
+                return 'Royalty';
+            case 'Dairy Queen':
+                return 'Peasant';
+            case "Hardee's":
+                return 'Villager';
+            case "Carl's Jr.":
+                return 'Tradesperson';
+            case 'Whataburger':
+                return 'Fieldhand';
+            case 'In-N-Out':
+                return 'Merchant';
+            case 'Shake Shack':
+                return 'Noble';
+            case 'Five Guys':
+                return 'Guardian';
+            case 'KFC':
+                return 'Soldier';
+            case "Arby's":
+                return 'Constable';
+            case 'Jack in the Box':
+                return 'Artisan';
+            case 'Sonic Drive-In':
+                return 'Bard';
+
+            default:
+                return 'Peasant';
         }
     }
 }
+console.log(getPrefix("Five Guys", "Male"));
+
 
 function getPoints(value) {
     switch (value) {
-        case 'true': return 2
-        case 'false': return 1
-        default: return 1
+        case 'true':
+            return 2
+        case 'false':
+            return 1
+        default:
+            return 1
     }
 }
 
@@ -65,61 +114,470 @@ function getFirstName() {
     const q3 = document.querySelector('input[name="q3"]:checked')?.value || '';
     const q4 = document.querySelector('input[name="q4"]:checked')?.value || '';
     const q5 = document.querySelector('input[name="q5"]:checked')?.value || '';
+    const score = getPoints(q1) + getPoints(q2) + getPoints(q3) + getPoints(q4) + getPoints(q5);
+    if (gender === 'Male' && score <= 2) {
+            const r = Math.floor(Math.random() * 5) + 1
+            if (r === 1) {
+                return 'Shade'
+            }
+            if (r === 2) {
+                return 'Riven'
+            }
+            if (r === 3) {
+                return 'Kael'
+            }
+            if (r === 4) {
+                return 'Vex'
+            }
+            if (r === 5) {
+                return 'Nyx'
+            }
+            return 'Traveler'
+        }
+ 
+    if (gender === 'Female' && score <= 2) {
+            const r = Math.floor(Math.random() * 5) + 1
+            if (r === 1) {
+                return 'Nyra'
+            }
+            if (r === 2) {
+                return 'Lira'
+            }
+            if (r === 3) {
+                return 'Vexa'
+            }
+            if (r === 4) {
+                return 'Kira'
+            }
+            if (r === 5) {
+                return 'Elsin'
+            }
+            return 'Traveler'
+        }
+    
+    if (gender === 'Male' && score <= 4) {
+            const r = Math.floor(Math.random() * 5) + 1
+            if (r === 1) {
+                return 'Finn'
+            }
+            if (r === 2) {
+                return 'Perrin'
+            }
+            if (r === 3) {
+                return 'Alder'
+            }
+            if (r === 4) {
+                return 'Bram'
+            }
+            if (r === 5) {
+                return 'Corin'
+            }
+            return 'Traveler'
+        }
+    
+    if (gender === 'Female' && score <= 4) {
+            const r = Math.floor(Math.random() * 5) + 1
+            if (r === 1) {
+                return 'Elowen'
+            }
+            if (r === 2) {
+                return 'Tamsin'
+            }
+            if (r === 3) {
+                return 'Lark'
+            }
+            if (r === 4) {
+                return 'Mira'
+            }
+            if (r === 5) {
+                return 'Wren'
+            }
+            return 'Traveler'
+        }
 
-    const score =
-      getPoints(q1) +
-      getPoints(q2) +
-      getPoints(q3) +
-      getPoints(q4) +
-      getPoints(q5);
+    if (gender === 'Male' && score <= 6) {
+            const r = Math.floor(Math.random() * 5) + 1
+            if (r === 1) {
+                return 'Rowan'
+            }
+            if (r === 2) {
+                return 'Cedric'
+            }
+            if (r === 3) {
+                return 'Alaric'
+            }
+            if (r === 4) {
+                return 'Garrick'
+            }
+            if (r === 5) {
+                return 'Theo'
+            }
+            return 'Traveler'
+        }
+    
+    if (gender === 'Female' && score <= 6) {
+            const r = Math.floor(Math.random() * 5) + 1
+            if (r === 1) {
+                return 'Brienne'
+            }
+            if (r === 2) {
+                return 'Isolde'
+            }
+            if (r === 3) {
+                return 'Freya'
+            }
+            if (r === 4) {
+                return 'Elara'
+            }
+            if (r === 5) {
+                return 'Maeve'
+            }
+            return 'Traveler'
+        }
 
-    if (gender === 'Male') { if (score <= 2) return ['Shade','Riven','Kael','Vex','Nyx'][Math.floor(Math.random()*5)] }
-    if (gender === 'Female') { if (score <= 2) return ['Nyra','Lira','Vexa','Kira','Elsin'][Math.floor(Math.random()*5)] }
-    if (gender === 'Male') { if (score <= 4) return ['Finn','Perrin','Alder','Bram','Corin'][Math.floor(Math.random()*5)] }
-    if (gender === 'Female') { if (score <= 4) return ['Elowen','Tamsin','Lark','Mira','Wren'][Math.floor(Math.random()*5)] }
-    if (gender === 'Male') { if (score <= 6) return ['Rowan','Cedric','Alaric','Garrick','Theo'][Math.floor(Math.random()*5)] }
-    if (gender === 'Female') { if (score <= 6) return ['Brienne','Isolde','Freya','Elara','Maeve'][Math.floor(Math.random()*5)] }
-    if (gender === 'Male') { if (score <= 8) return ['Gareth','Thorne','Dorian','Lucian','Orion'][Math.floor(Math.random()*5)] }
-    if (gender === 'Female') { if (score <= 8) return ['Lyra','Isadora','Arwen','Helena','Valora'][Math.floor(Math.random()*5)] }
-    if (gender === 'Male') { if (score <= 10) return ['Aurelius','Valerian','Caelum','Magnus','Solin'][Math.floor(Math.random()*5)] }
-    if (gender === 'Female') { if (score <= 10) return ['Celestine','Seraphina','Aurelia','Elowyn','Lumina'][Math.floor(Math.random()*5)] }
+    if (gender === 'Male' && score <= 8) {
+            const r = Math.floor(Math.random() * 5) + 1
+            if (r === 1) {
+                return 'Gareth'
+            }
+            if (r === 2) {
+                return 'Thorne'
+            }
+            if (r === 3) {
+                return 'Dorian'
+            }
+            if (r === 4) {
+                return 'Lucian'
+            }
+            if (r === 5) {
+                return 'Orion'
+            }
+            return 'Traveler'
+        }
+    
+    if (gender === 'Female' && score <= 8) {
+            const r = Math.floor(Math.random() * 5) + 1
+            if (r === 1) {
+                return 'Lyra'
+            }
+            if (r === 2) {
+                return 'Isadora'
+            }
+            if (r === 3) {
+                return 'Arwen'
+            }
+            if (r === 4) {
+                return 'Helena'
+            }
+            if (r === 5) {
+                return 'Valora'
+            }
+            return 'Traveler'
+        }
+    
+    if (gender === 'Male' && score <= 10) {
+            const r = Math.floor(Math.random() * 5) + 1
+            if (r === 1) {
+                return 'Aurelius'
+            }
+            if (r === 2) {
+                return 'Valerian'
+            }
+            if (r === 3) {
+                return 'Caelum'
+            }
+            if (r === 4) {
+                return 'Magnus'
+            }
+            if (r === 5) {
+                return 'Solin'
+            }
 
-    return 'Traveler'
-}
+            return 'Traveler'
+    }
+
+        if (gender === 'Female' && score <= 10) {
+    
+                const r = Math.floor(Math.random() * 5) + 1
+                if (r === 1) {
+                    return 'Celestine'
+                }
+                if (r === 2) {
+                    return 'Seraphina'
+                }
+                if (r === 3) {
+                    return 'Aurelia'
+                }
+                if (r === 4) {
+                    return 'Elowyn'
+                }
+                if (r === 5) {
+                    return 'Lumina'
+                }
+
+                return 'Traveler'
+            }
+
+        }
 
 function getMiddleName() {
     const userName = document.getElementById('userName').value;
     const gender = document.getElementById('gender').value;
     const firstLetter = userName.charAt(0).toUpperCase();
-    if (gender === 'Male') return 'Valerian';
-    if (gender === 'Female') return 'Selene';
-    return '';
+    if (gender === 'Male') {
+        if (firstLetter === 'A') {
+            return 'Alwin'
+        }
+        if (firstLetter === 'B') {
+            return 'Benedict'
+        }
+        if (firstLetter === 'C') {
+            return 'Corwin'
+        }
+        if (firstLetter === 'D') {
+            return 'Darian'
+        }
+        if (firstLetter === 'E') {
+            return 'Edrin'
+        }
+        if (firstLetter === 'F') {
+            return 'Faelan'
+        }
+        if (firstLetter === 'G') {
+            return 'Gareth'
+        }
+        if (firstLetter === 'H') {
+            return 'Hadrian'
+        }
+        if (firstLetter === 'I') {
+            return 'Ignatius'
+        }
+        if (firstLetter === 'J') {
+            return 'Jorvan'
+        }
+        if (firstLetter === 'K') {
+            return 'Kaelen'
+        }
+        if (firstLetter === 'L') {
+            return 'Leofric'
+        }
+        if (firstLetter === 'M') {
+            return 'Mortimer'
+        }
+        if (firstLetter === 'N') {
+            return 'Nolan'
+        }
+        if (firstLetter === 'O') {
+            return 'Osric'
+        }
+        if (firstLetter === 'P') {
+            return 'Percival'
+        }
+        if (firstLetter === 'Q') {
+            return 'Quinlan'
+        }
+        if (firstLetter === 'R') {
+            return 'Roderic'
+        }
+        if (firstLetter === 'S') {
+            return 'Sylvan'
+        }
+        if (firstLetter === 'T') {
+            return 'Thaddeus'
+        }
+        if (firstLetter === 'U') {
+            return 'Ulric'
+        }
+        if (firstLetter === 'V') {
+            return 'Valerian'
+        }
+        if (firstLetter === 'W') {
+            return 'Wystan'
+        }
+        if (firstLetter === 'X') {
+            return 'Xander'
+        }
+        if (firstLetter === 'Y') {
+            return 'Yvain'
+        }
+        if (firstLetter === 'Z') {
+            return 'Zephan'
+        }
+        else {
+            return 'Nameless'
+        }
+    }
+    if (gender === 'Female') {
+        if (firstLetter === 'A') {
+            return 'Aeliana'
+        }
+        if (firstLetter === 'B') {
+            return 'Belladonna'
+        }
+        if (firstLetter === 'C') {
+            return 'Clarimond'
+        }
+        if (firstLetter === 'D') {
+            return 'Drusilla'
+        }
+        if (firstLetter === 'E') {
+            return 'Ethelyn'
+        }
+        if (firstLetter === 'F') {
+            return 'Fiora'
+        }
+        if (firstLetter === 'G') {
+            return 'Gisela'
+        }
+        if (firstLetter === 'H') {
+            return 'Honora'
+        }
+        if (firstLetter === 'I') {
+            return 'Ilyana'
+        }
+        if (firstLetter === 'J') {
+            return 'Juniper'
+        }
+        if (firstLetter === 'K') {
+            return 'Kerensa'
+        }
+        if (firstLetter === 'L') {
+            return 'Lucinda'
+        }
+        if (firstLetter === 'M') {
+            return 'Morgana'
+        }
+        if (firstLetter === 'N') {
+            return 'Nerissa'
+        }
+        if (firstLetter === 'O') {
+            return 'Ophelia'
+        }
+        if (firstLetter === 'P') {
+            return 'Philomena'
+        }
+        if (firstLetter === 'Q') {
+            return 'Queniva'
+        }
+        if (firstLetter === 'R') {
+            return 'Rosamund'
+        }
+        if (firstLetter === 'S') {
+            return 'Selene'
+        }
+        if (firstLetter === 'T') {
+            return 'Thalassa'
+        }
+        if (firstLetter === 'U') {
+            return 'Ursina'
+        }
+        if (firstLetter === 'V') {
+            return 'Violetta'
+        }
+        if (firstLetter === 'W') {
+            return 'Winifred'
+        }
+        if (firstLetter === 'X') {
+            return 'Xylia'
+        }
+        if (firstLetter === 'Y') {
+            return 'Ysoria'
+        }
+        if (firstLetter === 'Z') {
+            return 'Zephyra'
+        }
+        else {
+            return 'Nameless'
+        }
+    }
+
 }
 
 function getLastName() {
     const hLevel = document.getElementById('hLevel').value;
-    return hLevel > 2 ? ' of Gladwick' : ' of Mourndale';
+    if (hLevel >= 3) {
+        return ' of Gladwick'
+
+    }
+
+    else {
+        return ' of Mourndale'
+    }
+
 }
+
 
 function getSuffix(choice) {
-    if (choice === "man") return " The Brave";
-    if (choice === "gorilla") return " the Reasonable";
-    return '';
+    const r = Math.floor(Math.random() * 5) + 1;
+
+    if (choice === "man") {
+        if (r === 1) {
+            return "the Brave";
+        }
+        if (r === 2) {
+            return "the Stalwart";
+        }
+        if (r === 3) {
+            return "the Bold";
+        }
+        if (r === 4) {
+            return "the Steadfast";
+        }
+        if (r === 5) {
+            return "the Iron‑Hearted";
+        }
+        return "";
+    }
+
+    if (choice === "gorilla") {
+        if (r === 1) {
+            return "the Reasonable";
+        }
+        if (r === 2) {
+            return "the Gentle";
+        }
+        if (r === 3) {
+            return "the Grounded";
+        }
+        if (r === 4) {
+            return "the Stone‑Wise";
+        }
+        if (r === 5) {
+            return "the Even‑Tempered";
+        }
+        return "";
+    }
+
+    return "";
 }
 
-function getNewName() {
-  const food = document.getElementById('fastFood').value;
-  const gender = document.getElementById('gender').value;
+function getnewName() {
+    const gender = document.getElementById('gender').value;
+    const food = document.getElementById('fastFood').value;
+    const userName = document.getElementById('userName').value;
 
-  const prefix = getPrefix(food, gender);
-  const firstName = getFirstName();
-  const middleName = getMiddleName();
-  const lastName = getLastName();
-  const suffix = getSuffix(document.querySelector('input[name="exampleRadios"]:checked')?.value || 'man');
+    const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+    const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+    const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+    const q4 = document.querySelector('input[name="q4"]:checked')?.value;
+    const q5 = document.querySelector('input[name="q5"]:checked')?.value;
 
-  const fullName = `${prefix} ${firstName} ${middleName} ${lastName} ${suffix}`;
+    const choice = document.querySelector('input[name="exampleRadios"]:checked')?.value || "man";
 
-  const output = document.getElementById('getNewName');
-  output.innerHTML = fullName;
-  output.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (!gender) return alert("Please select a gender");
+    if (!food) return alert("Please select a fast food place");
+    if (!userName) return alert("Please enter your name");
+    if (!q1 || !q2 || !q3 || !q4 || !q5) return alert("Please answer all questions");
+
+    const prefix = getPrefix(food, gender);
+    const first = getFirstName();
+    const middle = getMiddleName();
+    const last = getLastName();
+    const suffix = getSuffix(choice);
+
+    const fullName = `${prefix} ${first} ${middle} ${last} ${suffix}`;
+
+    const output = document.getElementById('getNewName'); // ← THIS MATCHES YOUR HTML
+    output.innerText = fullName;
+    output.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
